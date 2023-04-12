@@ -37,7 +37,7 @@ class LlamaCppModel:
             string = string.encode()
         return self.model.tokenize(string)
 
-    def generate(self, context="", token_count=20, temperature=0.1, top_p=0.1, top_k=40, repetition_penalty=1.176, callback=None, stop=[' ]', '### Human:']):
+    def generate(self, context="", token_count=20, temperature=0.1, top_p=0.1, top_k=40, repetition_penalty=1.176, callback=None, stop=['\n', '### Human:']):
         if stop != []:
             stop_sequences = [s.encode("utf-8") for s in stop]
         else:
